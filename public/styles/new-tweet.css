@@ -1,0 +1,22 @@
+.tweet {
+  background-color: #cdb5bd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button-count {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; 
+  font-family: 'Bungee', cursive;
+}
+
+button {
+  width: 100px;
+  height: 35px;
+  background-color: #603344;
+  border: none;
+  border-radius: 3px;
+  font-family: 'Bungee', cursive;
+  }

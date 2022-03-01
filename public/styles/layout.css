@@ -30,7 +30,7 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: center; 
-  background-color: #f4f1ec;
+  background-color: #cdb5bd;
   margin: auto;
   padding: 0;
 }
