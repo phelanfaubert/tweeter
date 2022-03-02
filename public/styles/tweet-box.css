@@ -1,0 +1,6 @@
+.tweet-box {
+  background-color: #cdb5bd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
