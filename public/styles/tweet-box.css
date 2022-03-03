@@ -1,4 +1,4 @@
-.tweet-box:hover {
+#tweet-container:hover {
   background-color: #cdb5bd;
   display: flex;
   flex-direction: column;
