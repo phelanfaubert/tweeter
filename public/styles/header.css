@@ -5,5 +5,6 @@ header {
   align-items: center;
   z-index: 2;
   background-color: #e60041;
+  margin: 25px;
   background-image: url("https://www.transparenttextures.com/patterns/gray-floral.png");
 }

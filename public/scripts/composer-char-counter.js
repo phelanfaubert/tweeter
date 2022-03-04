@@ -7,6 +7,9 @@ $("#tweet-text").on("input", function (event) {
   $(".counter").text(charsRemain);
   if (charsRemain < 0) {
     $(".counter").css("color", "#ff0000");
+  } else {
+    $(".counter").css("color", "black");
+
   }
 });
 });

@@ -10,23 +10,18 @@ $(document).ready(function () {
   $('form').on('submit', function (event) {
     event.preventDefault();
     let data = $('form').serialize();
-    console.log("data!", data)
-    const error = $("#errorname")
-    if (data === 'text=') {
+    let inputVal = $('#tweet-text').val()
+    const error = $("#errorname");
+    if (inputVal.length <= 0) {
       error.html("Form Empty!")
-      error.show;
-      setTimeout(() => {
-        error.slideUp()
-      }, 5000);
+      error.slideDown();
       return;
-    } else if (data.length > 140) {
-      error.html("Too Many Characters")
-      error.show();
-      setTimeout(() => {
-        error.slideUp()
-      }, 5000);
+    } else if (inputVal.length > 140) {
+      error.html("Too Many Characters");
+      error.slideDown();
       return;
     } else {
+      error.slideUp();
       $.ajax({
         type: "POST",
         url: "/tweets",

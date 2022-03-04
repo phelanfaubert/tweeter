@@ -27,14 +27,30 @@ body {
 }
 
 main {
-  width: 90%;
+  /* width: 90%; */
   display: flex;
   flex-direction: column;
   justify-content: center; 
-  background-color: #cdb5bd;
+  /* background-color: #cdb5bd; */
   margin: auto;
   padding: 0;
+  
 }
+
+@media only screen and (min-width: 768px) {
+  body {
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+/* @media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    flex-direction: row;
+  }
+} */
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
