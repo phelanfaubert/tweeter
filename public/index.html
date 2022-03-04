@@ -50,13 +50,20 @@
   </header>
     <!-- Page-specific (main) content here -->
     <main class="container">
+     <style>
+        .error{
+           color: #D8000C;
+           background-color: #FFBABA;
+        }
+     </style>
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form class="tweet" method="POST" action="/tweets">
+          <span class="error" id="errorname"></span>
           <label class="humming" for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text" style="height: 37px; width: 538px;"></textarea>
           <div class="button-count" style="height: 37px; width: 538px;">
-            <button type="submit">Tweet</button>
+            <button type="submit" id="load-tweet"> Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140 </output>
           </div>
         </form>

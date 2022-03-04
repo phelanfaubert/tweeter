@@ -19,6 +19,11 @@
   border-top: double;
 }
 
+.error {
+   color: #D8000C;
+   background-color: #FFBABA;
+}
+
 /* .divider {
   background-color: black;
   height: 5px;

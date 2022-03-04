@@ -4,55 +4,78 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$(document).ready(function() {
+$(document).ready(function () {
 
+  loadTweets();
+  $('form').on('submit', function (event) {
+    event.preventDefault();
+    let data = $('form').serialize();
+    console.log("data!", data)
+    const error = $("#errorname")
+    if (data === 'text=') {
+      error.html("Form Empty!")
+      error.show;
+      setTimeout(() => {
+        error.slideUp()
+      }, 5000);
+      return;
+    } else if (data.length > 140) {
+      error.html("Too Many Characters")
+      error.show();
+      setTimeout(() => {
+        error.slideUp()
+      }, 5000);
+      return;
+    } else {
+      $.ajax({
+        type: "POST",
+        url: "/tweets",
+        data: data,
+      })
+        .then(function () {
+          loadTweets();
+          $('#tweet-text').val('')
+        })
+    }
+  })
+});
 
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
-
-
-const renderTweets = function(data) {
+const renderTweets = function (data) {
   // loops through tweets
   for (let element of data) {
     let $newTweet = createTweetElement(element)
-    $('#tweets-container').append($newTweet);
+    $('#tweets-container').prepend($newTweet);
   }
-  // calls createTweetElement for each tweet
-  // takes return value and appends it to the tweets container
 }
 
-createTweetElement = function(tweetData) {
+const loadTweets = function () {
+  $.ajax("http://localhost:8080/tweets", {
+    url: "/tweets",
+    method: "GET",
+    success: function (data) {
+      renderTweets(data);
+    }
+  })
+};
 
-const $tweets = `
+// $("<p>").text(tweetData.content.text)
+// $("<div>").text(textFromUser);
+const escape = function (text) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(text));
+  return div.innerHTML;
+};
+
+const createTweetElement = function (tweetData) {
+
+  const $tweets = `
 <article class="tweet-box">
 <div class="tweet-header">
   <div>${tweetData.user.name}</div>
   <div>@${tweetData.user.name}</div>
 </div>
 <div class="tweet-body">
-  <p>${tweetData.content.text}</p>
+<p>${escape(tweetData.content.text)}</p>
 </div>
 <div class="divider"></div>
 <div class="tweet-footer">
@@ -65,16 +88,8 @@ const $tweets = `
 </div>
 </article>
 `;
-return $tweets;
-
-
+  return $tweets;
 }
 
-renderTweets(data);
 
-// const $tweet = createTweetElement(tweetData);
-// Test / driver code (temporary)
-// console.log($tweet); // to see what it looks like
-// $('#tweets-container').append($tweet); 
 
-});
