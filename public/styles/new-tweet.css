@@ -5,6 +5,10 @@
   align-items: center;
 }
 
+.new-tweet {
+  font-family: 'Bungee', cursive;
+}
+
 .button-count {
   display: flex;
   flex-direction: row;

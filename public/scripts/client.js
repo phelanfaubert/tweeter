@@ -39,7 +39,7 @@ const renderTweets = function (data) {
   // loops through tweets
   for (let element of data) {
     let $newTweet = createTweetElement(element)
-    $('#tweets-container').prepend($newTweet);
+    $('.tweets-container').prepend($newTweet);
   }
 }
 
@@ -62,12 +62,14 @@ const escape = function (text) {
 };
 
 const createTweetElement = function (tweetData) {
-
   const $tweets = `
 <article class="tweet-box">
 <div class="tweet-header">
+<div id="image-name">
+  <img src="${tweetData.user.avatars}">
   <div>${tweetData.user.name}</div>
-  <div>@${tweetData.user.name}</div>
+  </div>
+  <div class="handle">@${tweetData.user.name}</div>
 </div>
 <div class="tweet-body">
 <p>${escape(tweetData.content.text)}</p>

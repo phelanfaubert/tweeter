@@ -1,22 +1,44 @@
-#tweet-container:hover {
-  background-color: #cdb5bd;
+.tweets-container {
+  margin: 25px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: double;
+}
+
+.tweet-box {
+  border: solid;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.tweet-box:hover {
+
+  box-shadow: 5px 5px grey;
+  
+}
+
+.tweet-body {
+  margin: 10px;
+  border-bottom: solid;
 }
 
 .tweet-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin: 10px;
 }
 
 .tweet-footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border-top: double;
+  margin: 5px;
+  font-size: 60%;
+}
+
+.handle {
+  color: #cdb5bd;
 }
 
 .error {
