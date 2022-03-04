@@ -16,3 +16,9 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+## Screenshots
+
+!["Screenshot of tweet-boxes"](https://github.com/phelanfaubert/tweeter/blob/master/docs/tweet-boxes.png?raw=true)
+!["Screenshot of tweet-desktop"](https://github.com/phelanfaubert/tweeter/blob/master/docs/tweet-desktop.png?raw=true)
+!["Screenshot of tweet-header"](https://github.com/phelanfaubert/tweeter/blob/master/docs/tweet-header.png?raw=true)
