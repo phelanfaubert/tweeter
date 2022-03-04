@@ -4,16 +4,16 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$(document).ready(function () {
+$(document).ready(function() {
 
   loadTweets();
-  $('form').on('submit', function (event) {
+  $('form').on('submit', function(event) {
     event.preventDefault();
     let data = $('form').serialize();
-    let inputVal = $('#tweet-text').val()
+    let inputVal = $('#tweet-text').val();
     const error = $("#errorname");
     if (inputVal.length <= 0) {
-      error.html("Form Empty!")
+      error.html("Form Empty!");
       error.slideDown();
       return;
     } else if (inputVal.length > 140) {
@@ -27,41 +27,39 @@ $(document).ready(function () {
         url: "/tweets",
         data: data,
       })
-        .then(function () {
+        .then(function() {
           loadTweets();
-          $('#tweet-text').val('')
-        })
+          $('#tweet-text').val('');
+        });
     }
-  })
+  });
 });
 
-const renderTweets = function (data) {
+const renderTweets = function(data) {
   // loops through tweets
   for (let element of data) {
-    let $newTweet = createTweetElement(element)
+    let $newTweet = createTweetElement(element);
     $('.tweets-container').prepend($newTweet);
   }
-}
+};
 
-const loadTweets = function () {
+const loadTweets = function() {
   $.ajax("http://localhost:8080/tweets", {
     url: "/tweets",
     method: "GET",
-    success: function (data) {
+    success: function(data) {
       renderTweets(data);
     }
-  })
+  });
 };
 
-// $("<p>").text(tweetData.content.text)
-// $("<div>").text(textFromUser);
-const escape = function (text) {
+const escape = function(text) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(text));
   return div.innerHTML;
 };
 
-const createTweetElement = function (tweetData) {
+const createTweetElement = function(tweetData) {
   const $tweets = `
 <article class="tweet-box">
 <div class="tweet-header">
@@ -86,7 +84,7 @@ const createTweetElement = function (tweetData) {
 </article>
 `;
   return $tweets;
-}
+};
 
 
 

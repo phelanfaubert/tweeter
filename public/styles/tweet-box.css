@@ -12,9 +12,7 @@
   flex-direction: column;
 }
 .tweet-box:hover {
-
   box-shadow: 5px 5px grey;
-  
 }
 
 .tweet-body {
@@ -41,13 +39,11 @@
   color: #cdb5bd;
 }
 
+.footer-icons:hover {
+  color: purple;
+}
+
 .error {
    color: #D8000C;
    background-color: #FFBABA;
 }
-
-/* .divider {
-  background-color: black;
-  height: 5px;
-  margin: 0 0.5em;
-} */

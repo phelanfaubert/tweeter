@@ -1,12 +1,21 @@
 .tweet {
-  /* background-color: #cdb5bd; */
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.new-tweet {
-  font-family: 'Bungee', cursive;
+.humming {
+ padding-top: 25px;
+ font-family: 'Bungee', cursive;
+ display: flex;
+ justify-content: flex-start;
+}
+
+#tweet-text {
+  background-color: #f4f1ec;
+  border: none;
+  border-bottom: 2px solid black;
+  padding-bottom: 5px;
 }
 
 .button-count {
@@ -14,9 +23,10 @@
   flex-direction: row;
   justify-content: space-between; 
   font-family: 'Bungee', cursive;
+  padding-top: 5px;
 }
 
-button {
+button:hover {
   width: 100px;
   height: 35px;
   background-color: #603344;

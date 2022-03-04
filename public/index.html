@@ -36,7 +36,7 @@
       <span id="logo">tweeter</span>
       <div class="nav-right">
         <span><strong>Write </strong>a new tweet</span>
-        <i class="fa-solid fa-angles-down"></i>
+        <button id="arrows" class="fa-solid fa-angles-down"></button>
       </div>
     </nav>
 
@@ -45,14 +45,13 @@
           <img src="/images/profile-hex.png"> 
       </div>
       <br>
-      <div>
-          <h2>Newton</h2>
+      <div id="tweeter-name">
+          <h2><strong></strong>Stevie Jo</h2>
       </div>
   </header>
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
         <form class="tweet" method="POST" action="/tweets">
           <span class="error" id="errorname"></span>
           <label class="humming" for="tweet-text">What are you humming about?</label>
@@ -64,24 +63,6 @@
         </form>
       </section>
       <section class="tweets-container">
-        <!-- <article>
-          <div class="tweet-header">
-            <div>Millie Jo</div>
-            <div>@milliejo</div>
-          </div>
-          <div class="tweet-body">
-            <p>It's a good day to have a good day.</p>
-          </div>
-          <div class="divider"></div>
-          <div class="tweet-footer">
-            <div>3 days ago</div>
-            <div class="footer-icons">
-              <i class="fa-solid fa-flag"></i>
-              <i class="fa-solid fa-retweet"></i>
-              <i class="fa-solid fa-heart"></i>
-            </div>
-          </div>
-        </article> -->
       </section>
   </main>
   </body>

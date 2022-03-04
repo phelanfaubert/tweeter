@@ -1,20 +1,22 @@
 nav {
   color: #FFFFFF;
-  background-color: #cdb5bd;
+  background-color: #603344;
   padding-left: 1.5em;
   padding-right: 1.5em;
-  /* width: 100%; */
   display: flex;
   align-items: center;
   flex-direction: row;
   justify-content: space-between; 
   height: 120px;
-  /* z-index: 1; */
   position: fixed;
   top: 0;
   width: 100%
 }
 
+.button.nav-right {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 24px;
+}
 #logo {
   font-family: 'Bungee', cursive;
 }
@@ -25,19 +27,13 @@ nav {
   align-items: center;
 }
 
-
-
-
-
-/* class
-.logo {
-  
+#arrows {
+ color: white;
+ border: none;
+ background-color: inherit;
 }
 
-id
-#logo {
-
-} */
+#arrows:hover {background: inherit;}
 
 
 
